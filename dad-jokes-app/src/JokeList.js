@@ -30,7 +30,6 @@ class JokeList extends Component {
                 {this.state.jokes.map((joke) => (
                     <div> {joke}</div>
                 ))}
-                ;
             </div>
         );
     }
