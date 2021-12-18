@@ -1,25 +1,26 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-
-
-
-class Joke  extends Component {
+class Joke extends Component {
     constructor(props) {
         super(props);
-        this.state = { };
-        
+        this.state = {};
     }
 
-    async componentDidMount() {
-      
-    }
-  
+    async componentDidMount() {}
+
     render() {
-        
         return (
-            <div>
-                
+            <div className="Joke">
+                <div className="Joke-buttons">
+                    <i className="fas fa-arrow-up" />
+                    <span className="Joke-votes">{this.props.votes}</span>
+                    <i className="fas fa-arrow-down" />
+                </div>
+                <div className="Joke-text">{this.props.text}</div>
+                <div className="Joke-smiley">
+                    <i />
+                </div>
             </div>
         );
     }
