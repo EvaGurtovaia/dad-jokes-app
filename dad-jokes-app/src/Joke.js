@@ -24,8 +24,23 @@ class Joke extends Component {
             return "#f44336";
         }
     }
-
-    async componentDidMount() {}
+    getEmoji() {
+        if (this.props.votes >= 15) {
+            return "em em-joy_cat";
+        } else if (this.props.votes >= 12) {
+            return "em em-kissing_cat";
+        } else if (this.props.votes >= 9) {
+            return "em em-heart_eyes_cat";
+        } else if (this.props.votes >= 6) {
+            return "em em-smile_cat";
+        } else if (this.props.votes >= 3) {
+            return "em em-smiley_cat";
+        } else if (this.props.votes >= 0) {
+            return "em em-cat2";
+        } else {
+            return "em em-pouting_cat";
+        }
+    }
 
     render() {
         return (
@@ -48,11 +63,7 @@ class Joke extends Component {
                 </div>
                 <div className="Joke-text">{this.props.text}</div>
                 <div className="Joke-smiley">
-                    <i
-                        class="em em-smiley_cat"
-                        aria-role="presentation"
-                        aria-label="SMILING CAT FACE WITH OPEN MOUTH"
-                    ></i>
+                    <i className={this.getEmoji()}></i>
                 </div>
             </div>
         );
