@@ -27,7 +27,9 @@ class JokeList extends Component {
     handleVote(id, delta) {
         this.setState((prvSt) => ({
             jokes: prvSt.jokes.map((joke) =>
-                joke.id === id ? { ...joke, votes: joke.votes + delta } : joke
+                joke.id === id
+                    ? { ...joke, votes: (joke.votes += delta) }
+                    : joke
             ),
         }));
     }
